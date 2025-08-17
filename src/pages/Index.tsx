@@ -259,18 +259,18 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-terminal-black text-terminal-green font-mono">
+    <div className="min-h-screen bg-black text-green-500 font-mono">
       {/* Header */}
-      <div className="border-b border-terminal-gray p-4">
+      <div className="border-b border-gray-700 p-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
-            <Icon name="Terminal" size={24} className="text-terminal-green" />
+            <Icon name="Terminal" size={24} className="text-green-500" />
             <h1 className="text-lg font-bold">ШКОЛЬНЫЙ СИСАДМИН</h1>
           </div>
           <div className="flex items-center space-x-2">
             <div className="w-3 h-3 rounded-full bg-red-500"></div>
             <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-            <div className="w-3 h-3 rounded-full bg-terminal-green"></div>
+            <div className="w-3 h-3 rounded-full bg-green-500"></div>
           </div>
         </div>
       </div>
@@ -283,9 +283,9 @@ const Index = () => {
         {gameOutput.map((line, index) => (
           <div key={index} className="whitespace-pre-wrap">
             {line.startsWith('$') ? (
-              <span className="text-terminal-grayLight">{line}</span>
+              <span className="text-gray-400">{line}</span>
             ) : line.includes('✓') || line.includes('✅') ? (
-              <span className="text-terminal-green font-bold">{line}</span>
+              <span className="text-green-500 font-bold">{line}</span>
             ) : line.includes('Ошибка') || line.includes('ошибка') || line.includes('❌') ? (
               <span className="text-red-400">{line}</span>
             ) : line.includes('💡') ? (
@@ -304,20 +304,20 @@ const Index = () => {
       </div>
 
       {/* Input Area */}
-      <div className="border-t border-terminal-gray p-4">
+      <div className="border-t border-gray-700 p-4">
         <form onSubmit={handleSubmit} className="flex items-center space-x-2">
-          <span className="text-terminal-green">$</span>
+          <span className="text-green-500">$</span>
           <Input
             ref={inputRef}
             value={currentInput}
             onChange={(e) => setCurrentInput(e.target.value)}
-            className="flex-1 bg-terminal-black border-terminal-gray text-terminal-green font-mono placeholder-terminal-grayLight focus:border-terminal-green"
+            className="flex-1 bg-black border-gray-700 text-green-500 font-mono placeholder-gray-400 focus:border-green-500"
             placeholder="Введите команду..."
             autoComplete="off"
           />
           <Button 
             type="submit"
-            className="bg-terminal-green text-terminal-black hover:bg-terminal-green/80 font-mono"
+            className="bg-green-500 text-black hover:bg-green-400 font-mono"
           >
             <Icon name="Send" size={16} />
           </Button>
@@ -332,7 +332,7 @@ const Index = () => {
                 variant="outline"
                 size="sm"
                 onClick={() => handleCommand(num)}
-                className="border-terminal-gray text-terminal-green hover:bg-terminal-gray hover:text-terminal-green font-mono text-xs"
+                className="border-gray-700 text-green-500 hover:bg-gray-700 hover:text-green-500 font-mono text-xs"
               >
                 {num}
               </Button>
@@ -344,7 +344,7 @@ const Index = () => {
                 variant="outline"
                 size="sm"
                 onClick={() => handleCommand(cmd)}
-                className="border-terminal-gray text-terminal-green hover:bg-terminal-gray hover:text-terminal-green font-mono text-xs"
+                className="border-gray-700 text-green-500 hover:bg-gray-700 hover:text-green-500 font-mono text-xs"
               >
                 {cmd}
               </Button>
