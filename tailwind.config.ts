@@ -61,6 +61,12 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				terminal: {
+					green: '#00FF00',
+					black: '#000000',
+					gray: '#333333',
+					grayLight: '#666666'
 				}
 			},
 			borderRadius: {
@@ -68,7 +74,18 @@ export default {
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
+			fontFamily: {
+				mono: ['JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', 'monospace']
+			},
 			keyframes: {
+				typewriter: {
+					'0%': { width: '0%' },
+					'100%': { width: '100%' }
+				},
+				blink: {
+					'0%, 50%': { opacity: '1' },
+					'51%, 100%': { opacity: '0' }
+				},
 				'accordion-down': {
 					from: {
 						height: '0'
@@ -88,7 +105,9 @@ export default {
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'typewriter': 'typewriter 3s steps(40) 1s 1 normal both',
+				'blink': 'blink 1s infinite'
 			}
 		}
 	},
